@@ -1,0 +1,728 @@
+:root {
+    --bg-dark: #0B0B0C;
+    --bg-card: #161618;
+    --text-light: #F5F5F7;
+    --text-muted: #A0A0A5;
+    
+    /* Paleta de acentos pastel */
+    --sage: #D8E2DC;
+    --blush-light: #FFE5D9;
+    --pink-pastel: #FFCAD4;
+    --pink-medium: #F4ACB7;
+    --purple-gray: #9D8189;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(11, 11, 12, 0.8);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--pink-pastel);
+}
+
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--pink-medium);
+}
+
+section {
+    padding: 8rem 10% 4rem 10%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--pink-pastel), var(--purple-gray));
+}
+
+
+/* --- Inicio (Hero) --- */
+.hero-sub {
+    font-size: 1rem;
+    color: var(--sage);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+h1 span {
+    color: transparent;
+    background: linear-gradient(135deg, var(--pink-pastel), var(--pink-medium), var(--purple-gray));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.cta-btn.primary {
+    border: 1px solid var(--pink-pastel);
+    color: var(--pink-pastel);
+}
+
+.cta-btn.primary:hover {
+    background: var(--pink-pastel);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px rgba(255, 202, 212, 0.3);
+}
+
+.cta-btn.secondary {
+    border: 1px solid rgba(216, 226, 220, 0.3);
+    color: var(--sage);
+}
+
+.cta-btn.secondary:hover {
+    border-color: var(--pink-medium);
+    color: var(--pink-medium);
+    background: rgba(244, 172, 183, 0.03);
+}
+
+/* --- Sobre Mí (Diseño con Imagen) --- */
+.about-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.about-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image-placeholder {
+    width: 280px;
+    height: 360px;
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--purple-gray);
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+/* Marco punteado estético detrás de la imagen */
+.about-image-placeholder::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 1px dashed rgba(255, 202, 212, 0.2);
+    border-radius: 16px;
+    z-index: -1;
+}
+
+.about-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.skill-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column; /* Coloca el logo arriba y el texto abajo */
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-icon-wrapper {
+    color: var(--sage); /* Tono verde grisáceo base para los logos */
+    transition: transform 0.3s, color 0.3s;
+}
+
+.skill-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+/* Efectos Interactivos Coherentes con la Temática */
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 202, 212, 0.2); /* Sutil destello rosa pastel */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.skill-card:hover .skill-icon-wrapper {
+    color: var(--pink-pastel); /* El logo cambia a rosa pastel */
+    transform: scale(1.1);
+}
+
+.skill-card:hover .skill-name {
+    color: var(--text-light); /* El nombre se ilumina */
+}
+
+
+/* --- Sección Proyectos (Con Botones Integrados) --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(244, 172, 183, 0.3);
+}
+
+.project-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que el contenido ocupe el espacio para empujar el botón abajo */
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.project-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+}
+
+.project-links a {
+    color: var(--text-muted);
+    transition: color 0.3s;
+}
+
+.project-links a:hover {
+    color: var(--pink-pastel);
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--purple-gray);
+    margin-bottom: 2rem;
+    flex-grow: 1; /* Empuja el botón exactamente al fondo de la tarjeta */
+}
+
+/* Nuevo Botón del Proyecto */
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--sage);
+    border: 1px solid rgba(216, 226, 220, 0.15);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.project-btn:hover {
+    background: rgba(244, 172, 183, 0.05);
+    border-color: var(--pink-medium);
+    color: var(--pink-medium);
+}
+
+/* --- Sección Contacto --- */
+.contact-section {
+    padding: 5rem 0;
+}
+
+.section-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--pink-pastel);
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 3rem;
+    font-size: 1.05rem;
+}
+
+/* Grid de Contacto */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3.5rem;
+    align-items: start;
+}
+
+/* Panel de Información Izquierdo */
+.contact-info-panel {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    padding: 2.5rem;
+    border-radius: 10px;
+}
+
+.contact-info-panel h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.contact-info-panel p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* --- Corrección de Estilos Sección Contacto --- */
+.contact-section {
+    padding: 6rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Contenedor centralizado para evitar el desborde completo hacia los bordes */
+.contact-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.section-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--pink-pastel, #f4acb7);
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0.5rem 0 1rem 0;
+    color: #fff;
+}
+
+.contact-subtitle {
+    color: var(--text-muted, #94a3b8);
+    max-width: 700px;
+    margin-bottom: 3.5rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Grid Perfectamente Alineado */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Tarjeta de Información Izquierda */
+.contact-info-panel {
+    background: var(--bg-card, #161618);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info-panel h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.contact-info-panel p {
+    color: var(--text-muted, #94a3b8);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Botones y Enlaces */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.btn-whatsapp {
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(216, 226, 220, 0.2);
+    color: var(--sage, #d8e2dc);
+    margin-bottom: 2.5rem;
+}
+
+.btn-whatsapp:hover {
+    background: rgba(244, 172, 183, 0.05);
+    border-color: var(--pink-pastel, #f4acb7);
+    color: var(--pink-pastel, #f4acb7);
+    transform: translateY(-2px);
+}
+
+/* Items de detalle */
+.contact-detail-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+
+.contact-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-muted, #94a3b8);
+    font-size: 0.95rem;
+}
+
+.contact-detail-item i, 
+.contact-detail-item svg {
+    color: var(--sage, #d8e2dc);
+}
+
+/* Redes Sociales Integradas */
+.contact-social-links {
+    display: flex;
+    gap: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1.5rem;
+}
+
+.contact-social-links a {
+    color: var(--text-muted, #94a3b8);
+    transition: all 0.3s ease;
+}
+
+.contact-social-links a:hover {
+    color: var(--pink-pastel, #f4acb7);
+    transform: translateY(-3px);
+}
+
+/* Inputs de Formulario (Corregidos para Fondo Oscuro) */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted, #94a3b8);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: var(--bg-card, #161618) !important; /* Forza el color oscuro de la tarjeta */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 6px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--pink-pastel, #f4acb7);
+    background: rgba(255, 255, 255, 0.02) !important;
+    box-shadow: 0 0 15px rgba(255, 202, 212, 0.08);
+}
+
+/* Botón de Envío Principal */
+.btn-primary {
+    background: var(--sage, #d8e2dc);
+    color: #121214;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: var(--pink-pastel, #f4acb7);
+    color: #121214;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 202, 212, 0.2);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* Control Responsivo Móvil */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    .contact-container {
+        padding: 0 1.5rem;
+    }
+    .contact-grid {
+        gap: 2.5rem;
+    }
+}
+
+footer {
+    padding: 3rem 10%;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* --- Ajuste para el SVG de GitHub --- */
+.github-svg-icon svg {
+    stroke: currentColor;
+    transition: transform 0.3s ease;
+}
+
+/* --- Botón Flotante de WhatsApp Temático --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(22, 22, 24, 0.8); /* Fondo a juego con tus tarjetas */
+    border: 1px solid rgba(216, 226, 220, 0.2); /* Borde sutil en tono sage */
+    color: var(--sage);
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    z-index: 2000;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.whatsapp-float .wa-icon {
+    color: var(--sage);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float .whatsapp-text {
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: max-width 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+    text-transform: uppercase;
+}
+
+/* --- Efectos Interactivos (Hover) --- */
+.whatsapp-float:hover {
+    border-color: var(--pink-pastel);
+    color: var(--pink-pastel);
+    background: var(--bg-card);
+    box-shadow: 0 10px 25px rgba(255, 202, 212, 0.15);
+    transform: translateY(-3px);
+}
+
+.whatsapp-float:hover .wa-icon {
+    color: var(--pink-pastel);
+    transform: scale(1.05);
+}
+
+/* El texto se despliega suavemente al pasar el mouse para no saturar la pantalla */
+.whatsapp-float:hover .whatsapp-text {
+    max-width: 100px;
+    opacity: 1;
+}
+
+/* Ajuste para que en móviles pequeños no interfiera demasiado */
+@media (max-width: 480px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        padding: 0.7rem;
+        border-radius: 50%; /* Se vuelve completamente circular en móviles */
+    }
+    .whatsapp-float .whatsapp-text {
+        display: none; /* Oculta el texto en móviles para optimizar espacio */
+    }
+}
+
+/* --- Adaptabilidad (Responsive) --- */
+@media (max-width: 768px) {
+    header { padding: 1.5rem 5%; }
+    nav { display: none; }
+    section { padding: 6rem 5% 3rem 5%; }
+    .about-content { grid-template-columns: 1fr; gap: 3rem; }
+    .about-image-placeholder { width: 100%; max-width: 280px; height: 320px; }
+}
