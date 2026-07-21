@@ -252,7 +252,7 @@ h1 span {
 /* Efectos Interactivos Coherentes con la Temática */
 .skill-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(255, 202, 212, 0.2); /* Sutil destello rosa pastel */
+    border-color: #F4ACB7; /* Sutil destello rosa pastel */
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
@@ -620,6 +620,7 @@ h1 span {
     width: 100%;
 }
 
+
 /* Control Responsivo Móvil */
 @media (max-width: 768px) {
     .section-title {
@@ -725,4 +726,52 @@ footer {
     section { padding: 6rem 5% 3rem 5%; }
     .about-content { grid-template-columns: 1fr; gap: 3rem; }
     .about-image-placeholder { width: 100%; max-width: 280px; height: 320px; }
+}
+
+/* alerta enviar formulario */
+/* --- Alerta Personalizada (Toast) --- */
+.custom-toast {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: var(--bg-card, #161618);
+    border: 1px solid var(--pink-pastel, #f4acb7);
+    color: var(--text-light, #ffffff);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    z-index: 3000;
+    
+    /* Estado inicial oculto */
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-toast svg,
+.custom-toast i {
+    color: var(--sage, #d8e2dc);
+}
+
+/* Estado visible */
+.custom-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Ajuste móvil */
+@media (max-width: 480px) {
+    .custom-toast {
+        top: 20px;
+        right: 20px;
+        left: 20px;
+        justify-content: center;
+    }
 }

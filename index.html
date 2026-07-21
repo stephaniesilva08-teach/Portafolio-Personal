@@ -35,7 +35,7 @@
                 Ver mis proyectos <i data-lucide="arrow-right" size="18"></i>
             </a>
             <a href="#contacto" class="cta-btn primary">
-                Hablemos <i data-lucide="message-square" size="18"></i>
+                Contacto <i data-lucide="message-square" size="18"></i>
             </a>
         </div>
     </section>
@@ -214,11 +214,15 @@
                     <div class="contact-detail-items">
                         <div class="contact-detail-item">
                             <i data-lucide="mail" size="18"></i>
-                            <span>StephanieSilva@gmail.com</span>
+                            <span>nathaliasilva0816@gmail.com</span>
                         </div>
                         <div class="contact-detail-item">
                             <i data-lucide="map-pin" size="18"></i>
                             <span>Cúcuta, Colombia</span>
+                        </div>
+                        <div class="contact-detail-item">
+                            <i data-lucide="message-square" size="18"></i>
+                            <span>+57 311 50 211 76</span>
                         </div>
                     </div>
 
@@ -229,7 +233,7 @@
                     </div>
                 </div>
 
-                <form class="contact-form" action="#" method="POST">
+                <form class="contact-form" action="mailto:nathaliasilva0816@gmail.com" method="POST" enctype="text/plain" onsubmit="mostrarMensaje(event)">
                     <div class="form-group">
                         <label for="nombre">Nombre Completo</label>
                         <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre...">
@@ -244,6 +248,10 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Enviar Formulario</button>
                 </form>
+                <div id="toast-notificacion" class="custom-toast">
+                    <i data-lucide="check-circle" size="18"></i>
+                    <span>Propuesta enviada por correo</span>
+                </div>
             </div>
         </div>
     </section>

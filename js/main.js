@@ -26,3 +26,14 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+function mostrarMensaje(event) {
+    const toast = document.getElementById('toast-notificacion');
+    
+    // Muestra la alerta personalizada
+    toast.classList.add('show');
+
+    // Oculta la alerta automáticamente después de 4 segundos
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 4000);
+}
