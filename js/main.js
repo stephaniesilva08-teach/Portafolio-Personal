@@ -26,6 +26,46 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// MANEJO DEL ENVÍO DEL FORMULARIO CON EMAILJS
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        submitBtn.innerHTML = "Enviando...";
+        submitBtn.disabled = true;
+
+        const formData = new FormData(this);
+
+        try {
+            const response = await fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                mostrarMensaje();
+                contactForm.reset();
+            } else {
+                alert("Ocurrió un error al enviar el mensaje.");
+            }
+        } catch (error) {
+            alert("Error de conexión. Inténtalo más tarde.");
+        } finally {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+}
+
 function mostrarMensaje(event) {
     const toast = document.getElementById('toast-notificacion');
     

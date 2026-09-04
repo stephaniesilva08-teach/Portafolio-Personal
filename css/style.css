@@ -766,6 +766,56 @@ footer {
     pointer-events: auto;
 }
 
+/* Ajuste de estilos para SVG personalizados de habilidades */
+.custom-svg-icon svg {
+    stroke: currentColor;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* --- Estilos para resaltar la sección de contacto --- */
+.btn-highlight {
+    background: linear-gradient(135deg, var(--pink-pastel, #f4acb7), var(--pink-medium, #f4acb7)) !important;
+    color: var(--bg-dark, #0b0b0c) !important;
+    font-weight: 700 !important;
+    padding: 1rem !important;
+    font-size: 1rem !important;
+    box-shadow: 0 4px 15px rgba(244, 172, 183, 0.3);
+    border: none !important;
+}
+
+.btn-highlight:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 172, 183, 0.5);
+}
+
+.btn-whatsapp-highlight {
+    background: #25D366 !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    margin-bottom: 2.5rem;
+}
+
+.btn-whatsapp-highlight:hover {
+    background: #20ba5a !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+.contact-detail-item {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    border-left: 3px solid var(--pink-pastel, #f4acb7);
+}
+
+.contact-detail-item span {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
 /* Ajuste móvil */
 @media (max-width: 480px) {
     .custom-toast {
