@@ -44,7 +44,7 @@
         <h2>Sobre mí</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>¡Hola! Soy una apasionada de la tecnología y el diseño web. Mi camino en el desarrollo de software comenzó con la curiosidad de entender cómo funcionan las cosas en internet y rápidamente se transformó en una vocación por crear experiencias digitales memorables.</p>
+                <p>¡Hola! Soy Desarrolladora en formación Full Stack con experiencia práctica creando aplicaciones web a través de proyectos personales y académicos. Me enfoco en construir interfaces dinámicas y conectar soluciones de backend sólidas.</p>
                 <p>Creo firmemente que el código no solo debe ser eficiente y escalable, sino también visualmente agradable y accesible para todos. Me enfoco en cuidar cada detalle, desde la optimización del rendimiento hasta la sutileza de una animación.</p>
             </div>
             <div class="about-image-container">
@@ -97,6 +97,24 @@
                 </div>
                 <span class="skill-name">GitHub</span>
             </div>
+            <div class="skill-card">
+                <div class="skill-icon-wrapper">
+                    <i data-lucide="terminal" size="32"></i>
+                </div>
+                <span class="skill-name">IA</span>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon-wrapper">
+                    <i data-lucide="database" size="32"></i>
+                </div>
+                <span class="skill-name">Base de Datos</span>
+            </div>
+               <div class="skill-card">
+                <div class="skill-icon-wrapper">
+                    <i data-lucide="terminal" size="32"></i>
+                </div>
+                <span class="skill-name">N8N</span>
+            </div>
         </div>
     </section>
 
@@ -104,22 +122,22 @@
         <h2>Proyectos destacados</h2>
         <div class="projects-grid">
             
-            <!-- Proyecto 1 
+            <!-- Proyecto 1 -->
            <div class="project-card">
                 <div class="project-content">
                     <div class="project-header">
-                        <h3>Pagina Web Empresa JOAL, jardin eterno </h3>
+                        <h3>DeliveryBot – Gestión de Pedidos Internos de cafeteria </h3>
                         <div class="project-links">
                             <a href="#" target="_blank" title="Código Fuente"><i data-lucide="github" size="18"></i></a>
                         </div>
                     </div>
-                    <p>Proyecto web desarrollado para el emprendimiento JOAL Jardín Eterno, enfocado en la exhibición de productos personalizados como rosas eternas, cajas de regalo, peluches y accesorios. 
-                        El sitio presenta un catálogo organizado, una sección de personalización de pedidos y acceso directo a redes sociales, ofreciendo una experiencia visual atractiva y fácil de navegar. 
-                        Fue construido con HTML,CSS, y JAVASCRIPT, priorizando el diseño responsivo, la estética moderna y la claridad en la presentación de la información.</p>
-                    <div class="project-tags"><span>HTML</span> • <span>CSS</span> • <span>JAVASCRIPT</span></div>
-                    <a href="https://pagina-html-css-seven.vercel.app/" target="_blank" class="project-btn">Visitar sitio web <i data-lucide="arrow-up-right" size="16"></i></a>
+                    <p>*DeliveryBot* es una solución en *n8n* que convierte **Telegram** en una terminal inteligente para pedir en cafeterías institucionales y monitorear compras en tiempo real.
+                         Centraliza menú, stock y reportes en **Google Sheets**, reduciendo esperas un 40%. 
+                        Además, valida la hora actual (`$now`) para bloquear compras fuera del horario operativo (Lunes a Viernes, 8:00 AM a 5:00 PM), permitiendo solo la consulta del menú.</p>
+                    <div class="project-tags"><span>N8N</span> • <span>GOOGLE SHEETS</span> • <span>TELEGRAM</span></div>
+               <!--    <a href="" target="_blank" class="project-btn">Visitar sitio web <i data-lucide="arrow-up-right" size="16"></i></a>--> 
                 </div>
-            </div> -->
+            </div> 
 
             <!-- Proyecto 2 -->
             <div class="project-card">
@@ -151,10 +169,8 @@
                         El sistema incluye autenticación segura, control de materia prima, creación de productos con fórmulas y ejecución de procesos productivos que actualizan automáticamente el stock. 
                         Además, incorpora visualización de inventarios con filtros de búsqueda y reportes de producción detallados.</p>
                     <div class="project-tags"><span>HTML</span> • <span>CSS</span> • <span>JAVASCRIPT</span></div>
-                    <P>Para ingresar: <br>
-                        N.identificacion: 11<br>
-                        Contraseña: 1
-                    </P>
+                    <P>Para ingresar: Es necesario registrarse.<br>
+                        <br>
                     <a href="https://gestion-inventario-javascript.vercel.app/" target="_blank" class="project-btn">Visitar sitio web <i data-lucide="arrow-up-right" size="16"></i></a>
                 </div>
             </div>
@@ -174,20 +190,23 @@
                 </div>
             </div>
 
-            <!-- Proyecto 5 
+           <!-- Proyecto 5 -->
             <div class="project-card">
                 <div class="project-content">
                     <div class="project-header">
-                        <h3>Plataforma de Notas Seguras</h3>
+                        <h3>Gestión de inventario (ACME)</h3>
                         <div class="project-links">
                             <a href="#" target="_blank" title="Código Fuente"><i data-lucide="github" size="18"></i></a>
                         </div>
                     </div>
-                    <p>Aplicación web centrada en la privacidad que encripta notas de texto en el cliente antes de ser almacenadas localmente.</p>
-                    <div class="project-tags"><span>HTML</span> • <span>Tailwind</span> • <span>CryptoJS</span></div>
-                    <a href="#" target="_blank" class="project-btn">Visitar sitio web <i data-lucide="arrow-up-right" size="16"></i></a>
+                    <p>Desarrollo de una aplicación de consola en Python para la gestión y trazabilidad de inventarios en múltiples bodegas (Norte, Centro, Oriente), utilizando archivos JSON para la persistencia de datos. 
+                        El sistema automatiza el registro de productos, el control de entradas y salidas con validación de existencias y la generación de sellos de fecha y hora para cada transacción. 
+                        Además, incluye módulos de búsqueda por código, historial detallado de movimientos, 
+                        generación de reportes globales o por zona con opción de exportación a archivo, e interfaz basada en menús con un manejo robusto de excepciones.</p>
+                    <div class="project-tags"><span>PYTHON</span> • 
+                    <a href="https://github.com/stephaniesilva08-teach/gestion-inventario-proyecto.git" target="_blank" class="project-btn">Visitar sitio web <i data-lucide="arrow-up-right" size="16"></i></a>
                 </div>
-            </div> -->
+            </div> 
 
         </div>
     </section>
